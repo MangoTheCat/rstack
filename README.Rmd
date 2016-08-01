@@ -10,7 +10,7 @@ knitr::opts_chunk$set(
 
 # stack
 
-> Stack Data Types as an 'R6' Class
+> Stack data type as an 'R6' class
 
 [![Linux Build Status](https://travis-ci.org/MangoTheCat/stack.svg?branch=master)](https://travis-ci.org/MangoTheCat/stack)
 [![Windows Build status](https://ci.appveyor.com/api/projects/status/github/MangoTheCat/stack?svg=true)](https://ci.appveyor.com/project/MangoTheCat/stack)
