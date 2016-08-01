@@ -9,7 +9,7 @@
 [![Windows Build status](https://ci.appveyor.com/api/projects/status/github/MangoTheCat/stack?svg=true)](https://ci.appveyor.com/project/MangoTheCat/stack)
 [![](http://www.r-pkg.org/badges/version/stack)](http://www.r-pkg.org/pkg/stack)
 [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/stack)](http://www.r-pkg.org/pkg/stack)
-
+[![Coverage Status](https://img.shields.io/codecov/c/github/MangoTheCat/stack/master.svg)](https://codecov.io/github/MangoTheCat/stack?branch=master)
 
 An extremely simple stack data type, implemented with 'R6' classes. The size
 of the stack increases as needed, and the amortized time complexity is O(1).
