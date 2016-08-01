@@ -20,7 +20,7 @@ The stack may contain arbitrary objects.
 
 
 ```r
-devtools::install_github("MangoTheCat/stack")
+source("https://install-github.me/MangoTheCat/stack")
 ```
 
 ## Usage
