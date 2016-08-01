@@ -10,65 +10,54 @@
 NULL
 
 #' @export
+#' @importFrom R6 R6Class
 
-stack <- function(n = 100L) {
-  data <- list(v = vector(n, mode = "list"), ptr = 0L)
-  list(
-    pop  = function() {
-      res <- stack_pop(data)
-      data <<- res$data
-      res$res
+stack <- R6Class(
+  "stack",
+  public = list(
+
+    initialize = function(n = 100L) {
+      private$data <- list(v = vector(n, mode = "list"), ptr = 0L)
+      self
     },
+
+    pop = function() {
+      if (private$ptr == 0) stop("Nothing to pop from empty stack")
+      res <- private$data[[private$ptr]]
+      private$data[private$ptr] <- list(NULL)
+      private$ptr <- private$ptr - 1L
+      res
+    },
+
     push = function(elem) {
-      res <- stack_push(data, elem)
-      data <<- res$data
-      res$res
+      ## Allocate more storage if needed
+      if (private$ptr == length(private$data)) {
+        private$data <- append(
+          private$data,
+          vector(length(private$data), mode = "list")
+        )
+      }
+      private$ptr <- private$ptr + 1L
+      private$data[private$ptr] <- list(elem)
+      list(data = data, res = private$data[[private$ptr]])
     },
+
     peek = function() {
-      res <- stack_peek(data)
-      data <<- res$data
-      res$res
+      if (private$ptr == 0) stop("Nothing to peek at empty stack")
+      private$data[[private$ptr]]
     },
+
     size = function() {
-      res <- stack_size(data)
-      data <<- res$data
-      res$res
+      private$ptr
     },
+
     is_empty = function() {
-      res <- stack_is_empty(data)
-      data <<- res$data
-      res$res
+      private$ptr == 0L
     }
+  ),
+
+  private = list(
+    data = NULL,
+    ptr = 0L
   )
-}
-
-stack_pop <- function(data) {
-  if (data$ptr == 0) stop("Nothing to pop from empty stack")
-  res <- data$v[[data$ptr]]
-  data$v[data$ptr] <- list(NULL)
-  data$ptr <- data$ptr - 1L
-  list(data = data, res = res)
-}
-
-stack_push <- function(data, elem) {
-  ## Allocate more storage if needed
-  if (data$ptr == length(data$v)) {
-    data$v <- append(data$v, vector(length(data$v), mode = "list"))
-  }
-  data$ptr <- data$ptr + 1L
-  data$v[data$ptr] <- list(elem)
-  list(data = data, res = data$v[[data$ptr]])
-}
-
-stack_peek <- function(data) {
-  if (data$ptr == 0) stop("Nothing to peek at empty stack")
-  list(data = data, res = data$v[[data$ptr]])
-}
-
-stack_size <- function(data) {
-  list(data = data, res = data$ptr)
-}
-
-stack_is_empty <- function(data) {
-  list(data = data, res = data$ptr == 0)
-}
+)

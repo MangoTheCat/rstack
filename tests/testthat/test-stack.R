@@ -3,7 +3,7 @@ context("stack")
 
 test_that("stack operations", {
 
-  s <- stack()
+  s <- stack$new()
   s$push(1L)
   expect_identical(s$pop(), 1L)
 
@@ -15,7 +15,7 @@ test_that("stack operations", {
 
 test_that("stack allocates more storage if needed", {
 
-  s <- stack(2)
+  s <- stack$new(2)
 
   s$push(1L)
   s$push(2L)
@@ -32,7 +32,7 @@ test_that("stack allocates more storage if needed", {
 
 test_that("error for empty stack", {
 
-  s <- stack()
+  s <- stack$new()
   expect_error(s$pop(), "Nothing to pop")
   expect_error(s$peek(), "Nothing to peek")
 
@@ -43,7 +43,7 @@ test_that("error for empty stack", {
 
 test_that("arbitrarly objects are fine", {
 
-  s <- stack()
+  s <- stack$new()
   m <- lm(mpg ~ disp, data = mtcars)
 
   s$push(m)
@@ -55,7 +55,7 @@ test_that("arbitrarly objects are fine", {
 
 test_that("pushing NULL is fine", {
 
-  s <- stack()
+  s <- stack$new()
   s$push(NULL)
   s$push(1L)
   s$push(NULL)
@@ -69,7 +69,7 @@ test_that("pushing NULL is fine", {
 
 test_that("peek", {
 
-  s <- stack()
+  s <- stack$new()
   s$push(1L)
 
   expect_identical(s$peek(), 1L)
@@ -77,7 +77,7 @@ test_that("peek", {
 
 test_that("size", {
 
-  s <- stack()
+  s <- stack$new()
   expect_identical(s$size(), 0L)
 
   s$push(100)
@@ -89,7 +89,7 @@ test_that("size", {
 
 test_that("is_empty", {
 
-  s <- stack()
+  s <- stack$new()
   expect_identical(s$is_empty(), TRUE)
 
   s$push(100)

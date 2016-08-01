@@ -11,5 +11,7 @@ LazyData: true
 URL: https://github.com/MangoTheCat/stack
 BugReports: https://github.com/MangoTheCat/stack/issues
 RoxygenNote: 5.0.1
+Imports:
+    R6
 Suggests: 
     testthat
