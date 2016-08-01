@@ -13,6 +13,7 @@ BugReports: https://github.com/MangoTheCat/stack/issues
 RoxygenNote: 5.0.1
 Imports:
     R6
-Suggests: 
+Suggests:
+    covr,
     testthat
 Encoding: UTF-8
