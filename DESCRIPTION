@@ -8,7 +8,7 @@ Description: An extremely simple stack data type, implemented with 'R6'
     time complexity is O(1). The stack may contain arbitrary objects.
 License: MIT + file LICENSE
 LazyData: true
-URL: https://github.com/MangoTheCat/stack
+URL: https://github.com/MangoTheCat/stack#readme
 BugReports: https://github.com/MangoTheCat/stack/issues
 RoxygenNote: 5.0.1
 Imports:
