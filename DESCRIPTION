@@ -1,0 +1,15 @@
+Package: stack
+Title: Stack Data Types as an 'R6' Class
+Version: 1.0.0
+Author: Gábor Csárdi
+Maintainer: Gábor Csárdi <gcsardi@mango-solutions.com>
+Description: An extremely simple stack data type, implemented with 'R6' classes. The size
+  of the stack increases as needed, and the amortized time complexity is O(1).
+  The stack may contain arbitrary objects.
+License: MIT + file LICENSE
+LazyData: true
+URL: https://github.com/MangoTheCat/stack
+BugReports: https://github.com/MangoTheCat/stack/issues
+RoxygenNote: 5.0.1
+Suggests: 
+    testthat
