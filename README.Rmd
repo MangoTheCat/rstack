@@ -43,8 +43,7 @@ S$size()
 ```{r}
 S$push(NULL)
 S$push(iris)
-colnames(S$peek())
-S$pop()
+colnames(S$pop())
 S$peek()
 ```
 
