@@ -5,6 +5,7 @@
 
 > Stack data type as an 'R6' class
 
+[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![Linux Build Status](https://travis-ci.org/MangoTheCat/stack.svg?branch=master)](https://travis-ci.org/MangoTheCat/stack)
 [![Windows Build status](https://ci.appveyor.com/api/projects/status/github/MangoTheCat/stack?svg=true)](https://ci.appveyor.com/project/MangoTheCat/stack)
 [![](http://www.r-pkg.org/badges/version/stack)](http://www.r-pkg.org/pkg/stack)
