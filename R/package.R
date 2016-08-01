@@ -34,7 +34,7 @@ stack <- R6Class(
 
     initialize = function(n = 100L) {
       private$data <- list(v = vector(n, mode = "list"), ptr = 0L)
-      self
+      invisible(self)
     },
 
     pop = function() {
@@ -55,7 +55,7 @@ stack <- R6Class(
       }
       private$ptr <- private$ptr + 1L
       private$data[private$ptr] <- list(elem)
-      self
+      invisible(self)
     },
 
     peek = function() {
