@@ -199,7 +199,7 @@ S$push(1L)
 #>     }
 #>     invisible(names)
 #> }
-#> <bytecode: 0x7fad05ae0b08>
+#> <bytecode: 0x7f8cb3f63908>
 #> <environment: namespace:utils>
 #> 
 #> $res
@@ -402,7 +402,7 @@ S$push(NULL)
 #>     }
 #>     invisible(names)
 #> }
-#> <bytecode: 0x7fad05ae0b08>
+#> <bytecode: 0x7f8cb3f63908>
 #> <environment: namespace:utils>
 #> 
 #> $res
@@ -580,7 +580,7 @@ S$push(iris)
 #>     }
 #>     invisible(names)
 #> }
-#> <bytecode: 0x7fad05ae0b08>
+#> <bytecode: 0x7f8cb3f63908>
 #> <environment: namespace:utils>
 #> 
 #> $res

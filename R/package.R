@@ -55,7 +55,7 @@ stack <- R6Class(
       }
       private$ptr <- private$ptr + 1L
       private$data[private$ptr] <- list(elem)
-      list(data = data, res = private$data[[private$ptr]])
+      self
     },
 
     peek = function() {
