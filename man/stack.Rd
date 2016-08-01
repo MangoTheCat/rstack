@@ -5,9 +5,39 @@
 \alias{stack}
 \alias{stack-package}
 \title{Stack Data Types as an 'R6' Class}
+\format{An object of class \code{R6ClassGenerator} of length 24.}
+\usage{
+stack
+}
 \description{
 An extremely simple stack data type, implemented with 'R6' classes. The
 size of the stack increases as needed, and the amortized time
 complexity is O(1). The stack may contain arbitrary objects.
+
+Methods: \itemize{
+\item \code{push(elem)} Puts an R object on the top of the stack.
+  This operation might trigger the allocation of memory, if the
+  currently allocated memory cannot hold the new element. Still, the
+  amortized time complexity of the stack is constant.
+  The stack may contain arbitrary R objects.
+\item \code{pop()} Removes and returns the top element of the stack.
+  It throws an error if the stack is empty.
+\item \code{peek()} Returns the top element of the stack. (Without
+  removing it.) It throws an error if the stack is empty.
+\item \code{size()} Returns the number of elements in the stack.
+\item \code{is_empty()} Returns wheather the stack is empty.
 }
+}
+\examples{
+S <- stack$new()
+S$push(1L)
+S$peek()
+S$pop()
+S$size()
+
+S$push(NULL)
+S$push(iris)
+colnames(S$peek())
+}
+\keyword{datasets}
 
