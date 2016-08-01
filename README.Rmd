@@ -32,6 +32,17 @@ devtools::install_github("MangoTheCat/stack")
 
 ```{r}
 library(stack)
+#' S <- stack$new()
+#' S$push(1L)
+#' S$peek()
+#' S$pop()
+#' S$size()
+#'
+#' S$push(NULL)
+#' S$push(iris)
+#' colnames(S$peek())
+#' S$pop()
+#' $$peek()
 ```
 
 ## License
