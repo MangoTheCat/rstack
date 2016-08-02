@@ -1,4 +1,4 @@
-Package: stack
+Package: rstack
 Title: Stack Data Type as an 'R6' Class
 Version: 1.0.0
 Author: Gábor Csárdi
@@ -8,8 +8,8 @@ Description: An extremely simple stack data type, implemented with 'R6'
     time complexity is O(1). The stack may contain arbitrary objects.
 License: MIT + file LICENSE
 LazyData: true
-URL: https://github.com/MangoTheCat/stack#readme
-BugReports: https://github.com/MangoTheCat/stack/issues
+URL: https://github.com/MangoTheCat/rstack#readme
+BugReports: https://github.com/MangoTheCat/rstack/issues
 RoxygenNote: 5.0.1
 Imports:
     R6
