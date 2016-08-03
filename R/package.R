@@ -30,45 +30,46 @@
 
 stack <- R6Class(
   "stack",
+  portable = FALSE,
   public = list(
 
     initialize = function(n = 100L) {
-      private$data <- list(v = vector(n, mode = "list"), ptr = 0L)
+      data <<- list(v = vector(n, mode = "list"), ptr = 0L)
       invisible(self)
     },
 
     pop = function() {
-      if (private$ptr == 0) stop("Nothing to pop from empty stack")
-      res <- private$data[[private$ptr]]
-      private$data[private$ptr] <- list(NULL)
-      private$ptr <- private$ptr - 1L
+      if (ptr == 0) stop("Nothing to pop from empty stack")
+      res <- data[[ptr]]
+      data[ptr] <<- list(NULL)
+      ptr <<- ptr - 1L
       res
     },
 
     push = function(elem) {
       ## Allocate more storage if needed
-      if (private$ptr == length(private$data)) {
-        private$data <- append(
-          private$data,
-          vector(length(private$data), mode = "list")
+      if (ptr == length(data)) {
+        data <<- append(
+          data,
+          vector(length(data), mode = "list")
         )
       }
-      private$ptr <- private$ptr + 1L
-      private$data[private$ptr] <- list(elem)
+      ptr <<- ptr + 1L
+      data[ptr] <<- list(elem)
       invisible(self)
     },
 
     peek = function() {
-      if (private$ptr == 0) stop("Nothing to peek at empty stack")
-      private$data[[private$ptr]]
+      if (ptr == 0) stop("Nothing to peek at empty stack")
+      data[[ptr]]
     },
 
     size = function() {
-      private$ptr
+      ptr
     },
 
     is_empty = function() {
-      private$ptr == 0L
+      ptr == 0L
     }
   ),
 
