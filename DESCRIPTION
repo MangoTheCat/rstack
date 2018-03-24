@@ -3,7 +3,7 @@ Title: Stack Data Type as an 'R6' Class
 Version: 1.0.0
 Author: Gábor Csárdi
 Maintainer: Gábor Csárdi <gcsardi@mango-solutions.com>
-Description: An extremely simple stack data type, implemented with 'R6'
+Description: An extremely simple LIFO (Last-In-First-Out) stack data type, implemented with 'R6'
     classes. The size of the stack increases as needed, and the amortized
     time complexity is O(1). The stack may contain arbitrary objects.
 License: MIT + file LICENSE
